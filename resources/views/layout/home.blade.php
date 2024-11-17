@@ -99,26 +99,17 @@
     <div class="container inner">
       <h2 class="section-title text-center">ABOUT US</h2>
       <p class="lead main text-center">A leading company in the field of meat trading since 2014</p>
+
+      
       <div class="row text-center story">
+        @foreach($descriptions as $description)
         <div class="col-sm-4">
           <div class="col-wrapper">
             <div class="icon-wrapper"> <i class="fa fa-briefcase"></i> </div>
 
 
             <h3>Who We Are</h3>
-            <p>DAMAN.EST For Food Supply & Meat Trading, a
-              subsidiary of Al Saadi Group, is a premier
-              organization specializing in the trade of food
-              products and meats. Founded in Jordan in 2014, our
-              establishment takes pride in distributing and
-              supplying high-quality chilled and frozen meats in
-              Amman and the northern regions of Jordan. We
-              ensure the availability of the finest imported meats
-              from diverse countries, including South Africa,
-              Australia, Brazil, Lebanon and many others. With a
-              commitment to excellence, Daman guarantees the
-              provision of superior meat products to meet the
-              discerning needs of our customers. </p>
+            <p>{{ $description->who_we_are }}</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -126,32 +117,17 @@
             <div class="icon-wrapper"> <i class="fa fa-handshake"></i> </div>
 
             <h3>Why Daman</h3>
-            <p>Daman Meat stands out for the superior quality of its
-              products and relies on professionalism in their
-              distribution and supply. The company places great
-              emphasis on meeting the needs of its customers and
-              ensuring their complete satisfaction with its services.
-              Located on King Hussein Street in Irbid, Daman Meat
-              is the pioneering meat establishment in northern
-              Jordan, operating as a bonded free zone. We strive to
-              deliver the best products and services to our valued
-              clients within the region and beyond in a
-              professional manner. </p>
+            <p><p>{{ $description->why_daman }}</p></p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="col-wrapper">
             <div class="icon-wrapper"> <i class="fa fa-lightbulb"></i> </div>
             <h3>Our Vision</h3>
-            <p>The vision of DAMAN.EST For Food Supply & Meat Trading is to become a
-              prominent player in the international meat export industry, recognized
-              for our superior product quality and stringent food safety standards. We
-              aim to build long-term partnerships, expand our market reach, and
-              contribute to the sustainable growth of the global meat trade while
-              upholding our commitment to ethical practices and customer
-              satisfaction.</p>
+            <p><p>{{ $description->our_vision }}</p></p>
           </div>
         </div>
+        @endforeach
       </div>
 
     </div>
@@ -163,69 +139,28 @@
 
 
 
-  <div id="gallary" class=" parallax light-wrapper">
+  <div id="gallary" class="parallax light-wrapper">
     <section class="ss-style-top"></section>
     <div class="container inner">
-      <h2 class="section-title text-center">Our Gallary</h2>
-      <p style="color: white;" class="lead main text-center">
-        Some images represent what we work with
-      </p>
+        <h2 class="section-title text-center">Our Gallary</h2>
+        <p style="color: white;" class="lead main text-center">
+            Some images represent what we work with
+        </p>
 
-      <div class="row">
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g1.jpg" alt="image" />
-          </div>
-
+        <div class="row">
+            @foreach ($images as $item)
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images">
+                        <img src="{{ url('/images/' . $item->image) }}" alt="Gallery Image">
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g2.jpg" alt="image" />
-          </div>
-
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g3.jpg" alt="image" />
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g4.jpg" alt="image" />
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g5.jpg" alt="image" />
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g6.jpg" alt="image" />
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g4.jpg" alt="image" />
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3">
-          <div class="menu-images">
-            <img src="img/gallary/g2.jpg" alt="image" />
-          </div>
-          <!-- <div class="menu-titles"><h1 class="">Hot drinks</h1></div> -->
-        </div>
-
-
-
-      </div>
-
-
     </div>
-    <!-- /.container -->
     <section class="ss-style-bottom"></section>
-  </div>
-  <!--/#food-menu-->
+</div>
+
+ 
 
 
 
@@ -240,18 +175,21 @@
       </p>
 
       <div class="row text-center chefs">
+        @foreach ($employees as $item)
+            
+       
         <div class="col-sm-4">
           <div class="col-wrapper">
             <div class="icon-wrapper">
-              <img src="img/emlopyees/mohimg.jpg" />
+              <img src="{{ url('/images/' . $item->image) }}" alt="Gallery Image">
             </div>
-            <h3 style="color: black;">sakher</h3>
+            <h3 style="color: black;">{{$item->name}}</h3>
             <p style="color: black;">
-              Owner & co-founder
+              {{$item->description}}
             </p>
           </div>
         </div>
-        <div class="col-sm-4">
+        {{-- <div class="col-sm-4">
           <div class="col-wrapper">
             <div class="icon-wrapper">
               <img src="img/emlopyees/mohimg.jpg" />
@@ -261,8 +199,8 @@
               Web-Developer
             </p>
           </div>
-        </div>
-        <div class="col-sm-4">
+        </div> --}}
+        {{-- <div class="col-sm-4">
           <div class="col-wrapper">
             <div class="icon-wrapper">
               <img src="img/emlopyees/mohimg.jpg" />
@@ -272,11 +210,8 @@
               manager
             </p>
           </div>
-        </div>
-
-
-
-
+        </div> --}}
+        @endforeach
       </div>
     </div>
   </div>

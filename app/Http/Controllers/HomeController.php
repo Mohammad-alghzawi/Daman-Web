@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clinet;
+use App\Models\Home;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\AboutUs;
+use App\Models\Employee;
+use App\Models\Gallary;
 
-class ClinetController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.clients.index');
+        $descriptions = AboutUs::all();
+        $images = Gallary::all();
+        $employees = Employee::all();
+        return view('layout.home', compact('descriptions','images','employees'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -34,7 +40,7 @@ class ClinetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Clinet $clinet)
+    public function show(Home $home)
     {
         //
     }
@@ -42,7 +48,7 @@ class ClinetController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Clinet $clinet)
+    public function edit(Home $home)
     {
         //
     }
@@ -50,7 +56,7 @@ class ClinetController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Clinet $clinet)
+    public function update(Request $request, Home $home)
     {
         //
     }
@@ -58,7 +64,7 @@ class ClinetController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Clinet $clinet)
+    public function destroy(Home $home)
     {
         //
     }

@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ClinetController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\GallaryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +23,25 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('layout/home');
+
+
+
+
+Route::get('/', [HomeController::class, 'index']);
+
+
+
+
+
+// dashboard routes 
+
+Route::get('/dash', function () {
+    return view('dashboard/dashhome');
 });
+
+Route::resource('/about-us', AboutUsController::class);
+Route::resource('/gallary',GallaryController::class);
+Route::resource('/dashboard-home', DashboardController::class);
+Route::resource('/employees',EmployeeController::class);
+Route::resource('/certificates',CertificateController::class);
+Route::resource('/clients',ClinetController::class);
