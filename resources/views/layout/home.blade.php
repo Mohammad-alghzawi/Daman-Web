@@ -10,6 +10,7 @@
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/daman_logo-removebg-preview (1).png')}}" />
 
   <!-- css -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
@@ -227,39 +228,42 @@
       </p>
 
       <div class="row">
+        @foreach ($certificates as $item)
+            
+       
         <div class="col-md-4 col-sm-6">
           <div class="pricing-item">
-            <img class="img-responsive img-thumbnail" src="img/certifica/c1.jpg" alt="" />
+            <img class="img-responsive img-thumbnail" src="{{ url('/images/' . $item->image) }}" alt="Gallery Image">
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="pricing-item">
-            <img class="img-responsive img-thumbnail" src="img/certifica/c2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="pricing-item">
-            <img class="img-responsive img-thumbnail" src="img/certifica/c3.jpg" alt="" />
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
+        {{-- <div class="col-md-4 col-sm-6">
           <div class="pricing-item">
             <img class="img-responsive img-thumbnail" src="img/certifica/c2.jpg" alt="" />
           </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6">
+        </div> --}}
+        {{-- <div class="col-md-4 col-sm-6">
           <div class="pricing-item">
             <img class="img-responsive img-thumbnail" src="img/certifica/c3.jpg" alt="" />
           </div>
-        </div>
+        </div> --}}
+        {{-- <div class="col-md-4 col-sm-6">
+          <div class="pricing-item">
+            <img class="img-responsive img-thumbnail" src="img/certifica/c2.jpg" alt="" />
+          </div>
+        </div> --}}
 
-        <div class="col-md-4 col-sm-6">
+        {{-- <div class="col-md-4 col-sm-6">
+          <div class="pricing-item">
+            <img class="img-responsive img-thumbnail" src="img/certifica/c3.jpg" alt="" />
+          </div>
+        </div> --}}
+
+        {{-- <div class="col-md-4 col-sm-6">
           <div class="pricing-item">
             <img class="img-responsive img-thumbnail" src="img/certifica/c1.jpg" alt="" />
           </div>
-        </div>
-
+        </div> --}}
+        @endforeach
       </div>
     </div>
   </div>
@@ -282,6 +286,19 @@
       <p style="color: white;" class="lead main text-center">We are so proud to work with you</p>
 
       <div class="row text-center services-3">
+        @foreach ($Cimages as $item)
+            
+       
+        <div class="col-sm-3">
+          <div class="col-wrapper">
+            <img class="icon-border bm10" src="{{ url('/images/' . $item->image) }}" alt="Gallery Image">
+          </div>
+        </div>
+        {{-- <div class="col-sm-3">
+          <div class="col-wrapper">
+            <div class="icon-border bm10"><img src="img/clien/client1.png" alt=""></i></div>
+          </div>
+        </div>
         <div class="col-sm-3">
           <div class="col-wrapper">
             <div class="icon-border bm10"><img src="img/clien/client3.png" alt=""></i></div>
@@ -291,19 +308,9 @@
           <div class="col-wrapper">
             <div class="icon-border bm10"><img src="img/clien/client1.png" alt=""></i></div>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="col-wrapper">
-            <div class="icon-border bm10"><img src="img/clien/client3.png" alt=""></i></div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="col-wrapper">
-            <div class="icon-border bm10"><img src="img/clien/client1.png" alt=""></i></div>
-          </div>
-        </div>
+        </div> --}}
 
-
+        @endforeach
       </div>
     </div>
   </div>

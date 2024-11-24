@@ -81,7 +81,7 @@
                       <tr>
                           <td style="padding: 10px;">{{ $employee->id }}</td>
                          
-                          <td><a href="#"><img src="{{ url('/images/' . $employee->image) }}" width="100px"
+                          <td><a href="#"><img style="border-radius: 50%; height:100px"  src="{{ url('/images/' . $employee->image) }}" width="100px"
                             height="100px" alt="Avatar"></a></td>
                             <td style="padding: 10px;">{{ $employee->name }}</td>
                           <td style="padding: 10px;">{{ $employee->description }}</td>

@@ -6,6 +6,8 @@ use App\Models\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AboutUs;
+use App\Models\Certificate;
+use App\Models\Clinet;
 use App\Models\Employee;
 use App\Models\Gallary;
 
@@ -19,7 +21,9 @@ class HomeController extends Controller
         $descriptions = AboutUs::all();
         $images = Gallary::all();
         $employees = Employee::all();
-        return view('layout.home', compact('descriptions','images','employees'));
+        $certificates = Certificate::all();
+        $Cimages = Clinet::all();
+        return view('layout.home', compact('descriptions','images','employees','certificates','Cimages'));
     }
     /**
      * Show the form for creating a new resource.

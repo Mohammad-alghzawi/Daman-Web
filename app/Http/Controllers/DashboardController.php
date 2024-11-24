@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use App\Http\Controllers\Controller;
+use App\Models\Certificate;
+use App\Models\Clinet;
+use App\Models\Gallary;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +16,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.dashhome');
+        $clientsNumber = Clinet::count();
+        $gallaryNumber = Gallary::count();
+        $certificatesNumber = Certificate::count();
+      
+        
+        return view('dashboard.dashhome', compact('clientsNumber','gallaryNumber','certificatesNumber'));
+        
     }
 
     /**

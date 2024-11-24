@@ -53,6 +53,11 @@
                             Submit
                         </button>
                     </div>
+                    <div class="control">
+                        <a href="{{ route('gallary.index') }}" class="button red">
+                            Back
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>

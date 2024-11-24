@@ -71,6 +71,11 @@
                             Submit
                         </button>
                     </div>
+                    <div class="control">
+                        <a href="{{ route('about-us.index') }}" class="button red">
+                            Back
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>

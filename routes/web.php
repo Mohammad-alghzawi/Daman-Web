@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ClinetController;
 use App\Http\Controllers\DashboardController;
@@ -35,13 +36,16 @@ Route::get('/', [HomeController::class, 'index']);
 
 // dashboard routes 
 
-Route::get('/dash', function () {
-    return view('dashboard/dashhome');
-});
-
+// 
+Route::get('/dash', [DashboardController::class, 'index']);
+// Route::get('/dash', [::class, 'index']);
 Route::resource('/about-us', AboutUsController::class);
 Route::resource('/gallary',GallaryController::class);
 Route::resource('/dashboard-home', DashboardController::class);
 Route::resource('/employees',EmployeeController::class);
 Route::resource('/certificates',CertificateController::class);
 Route::resource('/clients',ClinetController::class);
+Route::resource('/admin',AdminController::class);
+
+
+

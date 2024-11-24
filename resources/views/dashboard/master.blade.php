@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="{{ asset('dashboard/css/main.css?v=1628755089081') }}">
 
   <!-- Favicon and Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('dashboard/apple-touch-icon.png') }}"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('dashboard/favicon-32x32.png') }}"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('dashboard/favicon-16x16.png') }}"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/daman_logo-removebg-preview (1).png') }}"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/daman_logo-removebg-preview (1).png') }}"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/daman_logo-removebg-preview (1).png')}}" />
   <link rel="mask-icon" href="{{ asset('dashboard/safari-pinned-tab.svg') }}" color="#00b4b6"/>
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css" rel="stylesheet">
 
@@ -185,7 +185,7 @@
         </a>
       </li>
       <li class="--set-active-profile-html">
-        <a href="admin.html">
+        <a href="{{ route('admin.index') }}">
             <span class="icon"><i class="mdi mdi-shield-account"></i></span>
             <span class="menu-item-label">Admin</span>
         </a>

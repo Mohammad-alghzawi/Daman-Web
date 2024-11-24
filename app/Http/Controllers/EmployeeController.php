@@ -48,7 +48,7 @@ class EmployeeController extends Controller
 
         $employee->save();
        
-        return redirect()->route('employees.index')->with('status','Add category successfully');
+        return redirect()->route('employees.index')->with('status','Add successfully');
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('title')
-    Clients
+    Admins
 @endsection
 
 @section('content')
@@ -51,9 +51,9 @@
     <section class="is-hero-bar">
       <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <h1 class="title">
-          Our Clients
+          Our Admins
         </h1>
-        <a href="{{ route('clients.create') }}"><button type="button" class="button light"><i
+        <a href="{{ route('admin.create') }}"><button type="button" class="button light"><i
             class="far fa-plus"></i> Create</button></a>
       </div>
     </section>
@@ -69,30 +69,35 @@
             <table style="width: 100%; table-layout: fixed;">
               <thead>
                   <tr>
-                      <th style="padding: 10px; text-align: left;">ID</th>
-                      <th style="padding: 10px; text-align: left;">Image</th>
-                      <th style="padding: 10px; text-align: left;">Created at</th>
+                    <th style="padding: 10px; text-align: left;">Image</th>
+                      <th style="padding: 10px; text-align: left;">Name</th>
+                      <th style="padding: 10px; text-align: left;">Email</th>
+                      <th style="padding: 10px; text-align: left;">Phone</th>
+                      
+                      {{-- <th style="padding: 10px; text-align: left;">Password</th> --}}
                       <th style="padding: 10px; text-align: left; width: 150px;">Action</th>
                   </tr>
               </thead>
               <tbody>
-                  @foreach ($images as $image)
+                  @foreach ($admins as $admin)
                       <tr>
-                          <td style="padding: 10px;">{{ $image->id }}</td>
-                         
-                          <td><a href="#"><img src="{{ url('/images/' . $image->image) }}" width="100px"
+                        <td><a href="#"><img style="border-radius: 50%; height:100px" src="{{ url('/images/' . $admin->image) }}" width="100px"
                             height="100px" alt="Avatar"></a></td>
-                          <td style="padding: 10px;">{{ $image->created_at }}</td>
+                          <td style="padding: 10px;">{{ $admin->name }}</td>
+                         
+                            <td style="padding: 10px;">{{ $admin->email }}</td>
+                          <td style="padding: 10px;">{{ $admin->phone }}</td>
+                          {{-- <td style="padding: 10px;">{{ $admin->password }}</td> --}}
                           <td style="padding: 10px;">
                             <div style="display: flex; justify-content: flex-start; gap: 10px;">
-                              <a href="{{route('clients.edit', $image->id) }}" style="text-decoration: none;">
+                              {{-- <a href="{{route('admin.edit', $admin->id) }}" style="text-decoration: none;">
                                 <button class="button small green" type="button" style="font-size: 14px; padding: 5px 10px;">
                                     <span class="icon"><i class="mdi mdi-pencil"></i></span>
                                 </button>
-                            </a>
+                            </a> --}}
                             
                           
-                              <form action="{{route('clients.destroy', $image->id) }}" method="POST" style="margin: 0; padding: 0;">
+                              <form action="{{route('admin.destroy', $admin->id) }}" method="POST" style="margin: 0; padding: 0;">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" class="button small red" style="font-size: 14px; padding: 5px 10px;">
