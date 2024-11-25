@@ -88,24 +88,22 @@
       </div>
       <div class="navbar-item dropdown has-divider has-user-avatar">
         <a class="navbar-link">
-          <div class="user-avatar">
+          {{-- <div class="user-avatar">
             <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe" class="rounded-full">
-          </div>
-          <div class="is-user-name"><span>John Doe</span></div>
+          </div> --}}
+          <div class="is-user-name"><span>DAMAN</span></div>
           <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
         </a>
         <div class="navbar-dropdown">
-          <a href="profile.html" class="navbar-item">
-            <span class="icon"><i class="mdi mdi-account"></i></span>
-            <span>My Profile</span>
-          </a>
-       
           <hr class="navbar-divider">
-          <a class="navbar-item">
-            <span class="icon"><i class="mdi mdi-logout"></i></span>
-            <span>Log Out</span>
-          </a>
-        </div>
+          <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <button type="submit" class="navbar-item" style="background: none; border: none; cursor: pointer;">
+                  <span class="icon"><i class="mdi mdi-logout"></i></span>
+                  <span>Log Out</span>
+              </button>
+          </form>
+      </div>
       </div>
      
       
@@ -123,8 +121,8 @@
   <div class="menu is-menu-main">
   
     <ul class="menu-list">
-      <li class="{{ request()->is('dashboard-home*') ? 'active' : '' }}" >
-        <a href="{{route('dashboard-home.index')}}">
+      <li class="{{ request()->is('dashboard-home-login*') ? 'active' : '' }}" >
+        <a href="{{route('dashboard-home-login.index')}}">
           <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
           <span class="menu-item-label">Dashboard</span>
         </a>
@@ -178,31 +176,25 @@
           <span class="menu-item-label">Forms</span>
         </a>
       </li> --}}
-      <li class="--set-active-profile-html">
+      {{-- <li class="--set-active-profile-html">
         <a href="profile.html">
           <span class="icon"><i class="mdi mdi-account-circle"></i></span>
           <span class="menu-item-label">Profile</span>
         </a>
-      </li>
-      <li class="--set-active-profile-html">
+      </li> --}}
+      {{-- <li class="--set-active-profile-html">
         <a href="{{ route('admin.index') }}">
             <span class="icon"><i class="mdi mdi-shield-account"></i></span>
             <span class="menu-item-label">Admin</span>
         </a>
-    </li>    
-      <li>
+    </li>     --}}
+      {{-- <li>
         <a href="login.html">
           <span class="icon"><i class="mdi mdi-lock"></i></span>
           <span class="menu-item-label">Login</span>
         </a>
-      </li>
-      <li>
+      </li> --}}
      
-        <ul>
-         
-         
-        </ul>
-      </li>
     </ul>
     
   

@@ -30,11 +30,14 @@
   <!-- js -->
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ 
 
+  
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="120">
 
+ 
 
   <div
     id="menu"
@@ -80,6 +83,7 @@
   <!-- menu -->
 
   <div id="header">
+    
     <div class="bg-overlay"></div>
     <div class="center text-center">
       <div class="banner">
@@ -327,7 +331,8 @@
       <p class="lead main text-center"></p>
       <div class="row">
         <div class="col-md-6">
-          <form class="form form-table" method="post">
+          <form class="form form-table" method="post" action="{{ route('contact.send') }}">
+            @csrf
             <div class="form-group">
               <h4>We will be so happy to communicate with you.</h4>
             </div>
@@ -413,6 +418,23 @@
       </div>
     </div>
     <section class="ss-style-bottom"></section>
+  </div>
+
+  <div class="volunteer-form">
+    @if (Session::has('status'))
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          Swal.fire({
+            title: "{{ Session::get('status') == 'Your message has been sent successfully!' ? 'Success' : 'Error' }}",
+            text: "{{ Session::get('status') }}",
+            icon: "{{ Session::get('status') == 'Your message has been sent successfully!' ? 'success' : 'error' }}",
+            showConfirmButton: true,
+            confirmButtonText: "OK",
+          });
+        });
+      </script>
+    @endif
   </div>
   <!-- contact us end section -->
 

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CertificateController;
@@ -8,7 +10,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\GallaryController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,27 +26,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('/dashboard-home-login', DashboardController::class);
+
+    // Logout Route
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+});
+
+
+require __DIR__.'/auth.php';
 
 
 
 
-Route::get('/', [HomeController::class, 'index']);
 
 
 
 
 
-// dashboard routes 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// 
-Route::get('/dash', [DashboardController::class, 'index']);
-// Route::get('/dash', [::class, 'index']);
+
+
+
+
 Route::resource('/about-us', AboutUsController::class);
 Route::resource('/gallary',GallaryController::class);
-Route::resource('/dashboard-home', DashboardController::class);
 Route::resource('/employees',EmployeeController::class);
 Route::resource('/certificates',CertificateController::class);
 Route::resource('/clients',ClinetController::class);
@@ -49,3 +65,4 @@ Route::resource('/admin',AdminController::class);
 
 
 
+Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');
