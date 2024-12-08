@@ -72,7 +72,7 @@
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="{{asset('img/pexels-viktorlundberg-755025.jpg')}}"
+                                <img src="{{asset('img/ejel2.jpg')}}"
                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:400px" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">

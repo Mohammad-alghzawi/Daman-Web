@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('title')
-    Employees-edit
+    Progress-edit
 @endsection
 
 @section('content')
@@ -26,7 +26,7 @@
                 <div class="field">
                     <h6 class="label" 
                         style="background-color:rgba(31, 41, 55,1); display: inline-block; padding: 5px 10px; color:white">
-                        Edit Employee Information   
+                        Edit Progress Graph   
                     </h6>
                     <label class="label">Image</label>
                     <div class="control">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Name</label>
+                    <label class="label">Description</label>
                     <div class="control">
                         <input class="input @error('name') is-danger @enderror" 
                                type="text" 
@@ -59,7 +59,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="field">
+                {{-- <div class="field">
                     <label class="label">Description</label>
                     <div class="control">
                         <input class="input @error('description') is-danger @enderror" 
@@ -72,7 +72,7 @@
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                </div>
+                </div> --}}
                 
 
                 <div class="field grouped">

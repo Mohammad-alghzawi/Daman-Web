@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('title')
-    Employees
+    Progress
 @endsection
 
 @section('content')
@@ -50,7 +50,7 @@
     <section class="is-hero-bar">
       <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <h1 class="title">
-          Our Employees
+          Our Porgress
         </h1>
         <a href="{{ route('employees.create') }}"><button type="button" class="button light"><i
             class="far fa-plus"></i> Create</button></a>
@@ -70,8 +70,8 @@
                   <tr>
                       <th style="padding: 10px; text-align: left;">ID</th>
                       <th style="padding: 10px; text-align: left;">Image</th>
-                      <th style="padding: 10px; text-align: left;">Name</th>
-                      <th style="padding: 10px; text-align: left;">description</th>
+                      <th style="padding: 10px; text-align: left;">Description</th>
+                      {{-- <th style="padding: 10px; text-align: left;">description</th> --}}
                       <th style="padding: 10px; text-align: left; width: 150px;">Action</th>
                   </tr>
               </thead>
@@ -80,10 +80,10 @@
                       <tr>
                           <td style="padding: 10px;">{{ $employee->id }}</td>
                          
-                          <td><a href="#"><img style="border-radius: 50%; height:100px"  src="{{ url('/images/' . $employee->image) }}" width="100px"
+                          <td><a href="#"><img style="border-radius: 5%; height:100px"  src="{{ url('/images/' . $employee->image) }}" width="100px"
                             height="100px" alt="Avatar"></a></td>
                             <td style="padding: 10px;">{{ $employee->name }}</td>
-                          <td style="padding: 10px;">{{ $employee->description }}</td>
+                          {{-- <td style="padding: 10px;">{{ $employee->description }}</td> --}}
                           <td style="padding: 10px;">
                             <div style="display: flex; justify-content: flex-start; gap: 10px;">
                               <a href="{{route('employees.edit', $employee->id) }}" style="text-decoration: none;">

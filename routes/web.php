@@ -35,34 +35,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/dashboard-home-login', DashboardController::class);
 
-    // Logout Route
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+
+    Route::resource('/about-us', AboutUsController::class);
+    Route::resource('/gallary', GallaryController::class);
+    Route::resource('/employees', EmployeeController::class);
+    Route::resource('/certificates', CertificateController::class);
+    Route::resource('/clients', ClinetController::class);
+    Route::resource('/admin', AdminController::class);
 });
 
 
-require __DIR__.'/auth.php';
 
-
-
-
-
+require __DIR__ . '/auth.php';
 
 
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-
-
-
-
-Route::resource('/about-us', AboutUsController::class);
-Route::resource('/gallary',GallaryController::class);
-Route::resource('/employees',EmployeeController::class);
-Route::resource('/certificates',CertificateController::class);
-Route::resource('/clients',ClinetController::class);
-Route::resource('/admin',AdminController::class);
-
-
-
 Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');

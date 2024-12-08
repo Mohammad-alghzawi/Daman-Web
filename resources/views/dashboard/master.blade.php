@@ -152,8 +152,8 @@
     
     <li class="--set-active-tables-html">
         <a href="{{ route('employees.index') }}">
-            <span class="icon"><i class="mdi mdi-account-group"></i></span>
-            <span class="menu-item-label">Employees</span>
+          <span class="icon"><i class="mdi mdi-chart-line"></i></span>
+          <span class="menu-item-label">Progress</span>
         </a>
     </li>
     <li class="--set-active-tables-html">
@@ -166,7 +166,7 @@
     <li class="--set-active-tables-html">
         <a href="{{ route('clients.index') }}">
             <span class="icon"><i class="mdi mdi-account-group"></i></span>
-            <span class="menu-item-label">Clients</span>
+            <span class="menu-item-label">Partners</span>
         </a>
     </li>
     

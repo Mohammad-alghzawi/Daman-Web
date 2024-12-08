@@ -32,12 +32,12 @@ class EmployeeController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'name' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
         ]);
 
         $employee = new Employee();
         $employee->name = $request->name;
-        $employee->description = $request->description;
+        // $employee->description = $request->description;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -76,12 +76,12 @@ class EmployeeController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'name' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
         ]);
 
         $employee = Employee::find($id);
         $employee->name = $request->name;
-        $employee->description = $request->description;
+        // $employee->description = $request->description;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');

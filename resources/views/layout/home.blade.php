@@ -70,9 +70,9 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#gallary">Gallery</a></li>
-          <li><a href="#employees">Employees</a></li>
+          <li><a href="#employees">Progress</a></li>
           <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#clients">Clients</a></li>
+          <li><a href="#clients">Partners</a></li>
           <li><a href="#contact-us">Contact Us</a></li>
           <li style="display: none"><a href="#"></a></li>
         </ul>
@@ -174,9 +174,9 @@
 
   <div id="employees" class=" pricing">
     <div class="container inner">
-      <h2 style="color: black;" class="section-title text-center">Our employees</h2>
+      <h2 style="color: black;" class="section-title text-center">Our Progress</h2>
       <p style="color: black;" class="lead main text-center">
-        About the employees of this company
+        About Our Progress Graph at the last years
       </p>
 
       <div class="row text-center chefs">
@@ -189,9 +189,9 @@
               <img src="{{ url('/images/' . $item->image) }}" alt="Gallery Image">
             </div>
             <h3 style="color: black;">{{$item->name}}</h3>
-            <p style="color: black;">
+            {{-- <p style="color: black;">
               {{$item->description}}
-            </p>
+            </p> --}}
           </div>
         </div>
         {{-- <div class="col-sm-4">
@@ -286,7 +286,7 @@
 
   <div id="clients" class="parallax parallax2 facts">
     <div class="container inner">
-      <h2 class="section-title text-center">Our Clients</h2>
+      <h2 class="section-title text-center">Our Partners</h2>
       <p style="color: white;" class="lead main text-center">We are so proud to work with you</p>
 
       <div class="row text-center services-3">
@@ -451,11 +451,7 @@
         <div class="footer-section about-us">
           <h2 style="font-weight: bolder; font-size: 25px">About Us</h2>
           <p class="hovv" style="font-size: 13px">
-            DAMAN.EST For Food Supply & Meat Trading, a subsidiary of Al Saadi
-            Group, is a premier organization specializing in the trade of food
-            products and meats. Founded in Jordan in 2014, our establishment
-            takes pride in distributing and supplying high-quality chilled and
-            frozen meats in Amman and the northern regions of Jordan.
+            Daman for Food Supply and Meat Trading Company, part of the AlSadi Group, is a leading enterprise specializing in food and meat trading. Established in Jordan in 2014, we take pride in supplying premium-quality chilled and frozen meats, as well as livestock, across Jordan and exporting to various regions worldwide.
           </p>
         </div>
 
