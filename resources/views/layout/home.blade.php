@@ -412,7 +412,7 @@
           <p>Huwwarah, Irbid, Jordan.</p>
 
           <h3><i class="fa fa-mobile fa-fw icin-hov"></i>Contacts</h3>
-          <p>Email: damantrading.est@gmail.com</p>
+          <p>Email: daman@damanest.com</p>
           <p>Phone: +962 79600 8333</p>
         </div>
       </div>
@@ -460,7 +460,7 @@
           <h2 style="font-weight: bolder; font-size: 25px">Get in Touch</h2>
           <ul class="hov" style="font-size: 13px; padding: 5px">
             <li style="margin-bottom: 10px">
-              <i class="fas fa-envelope" style="margin-right: 5px"></i>damantrading.est@gmail.com
+              <i class="fas fa-envelope" style="margin-right: 5px"></i>daman@damanest.com
             </li>
             <li style="margin-bottom: 10px">
               <i class="fas fa-map-marker-alt" style="margin-right: 5px"></i>Huwwarah, Irbid, Jordan.

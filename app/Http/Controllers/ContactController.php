@@ -22,7 +22,7 @@ class ContactController extends Controller
 
         try {
             // Send Email
-            Mail::to('mohd.a.ghzawi@gmail.com')->send(new ContactUsMail($details));
+            Mail::to('daman@damanest.com')->send(new ContactUsMail($details));
 
             // Success Message
             return redirect()->route('home')->with('status', 'Your message has been sent successfully!');
