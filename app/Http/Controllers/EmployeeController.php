@@ -46,6 +46,13 @@ class EmployeeController extends Controller
             $employee->image = $imageName;
         }
 
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '.' . $image->getClientOriginalExtension();
+        //     $image->move(base_path('public_html/images'), $imageName);    //for change the path
+        //     $photos->image = $imageName;
+        // }
+
         $employee->save();
        
         return redirect()->route('employees.index')->with('status','Add successfully');

@@ -81,6 +81,7 @@ section::before,section::after {
 
 @media (min-width: 375px) and (max-width: 768px) {
     #header {
+        background-image: url(../img/hanger.jpg);
         height: 500px;
         min-height: 500px;
     }
@@ -244,6 +245,8 @@ section::before,section::after {
     position:relative;
     color:#FFF;
 }
+
+
 .parallax .inner {
     padding-top:130px;
     padding-bottom:130px;
